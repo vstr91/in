@@ -22,6 +22,15 @@
     <body>
         {% block body %}
             {% block topo %}
+                <div class="container-fluid">
+                    <div class="row" style="height: 10px; border: none">
+                        <div class="col-md-1 bg-danger"></div>
+                        <div class="col-md-3 bg-info"></div>
+                        <div class="col-md-4 bg-primary"></div>
+                        <div class="col-md-3 bg-success"></div>
+                        <div class="col-md-1 bg-warning"></div>
+                    </div>
+                </div>
                 <nav class="navbar navbar-expand" id="menu-principal">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -54,11 +63,14 @@
                     </div>
                 </nav>
             {% endblock topo %}
+        {% block conteudo %}{% endblock %}
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
             <script src="{{ asset('js/popper.min.js') }}"></script>
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{#            <script src="{{ asset('js/scrollify.min.js') }}"></script>#}
+            <script src="{{ asset('js/holder.min.js') }}"></script>
         {% endblock %}
     </body>
 </html>

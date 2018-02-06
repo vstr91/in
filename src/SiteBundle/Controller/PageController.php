@@ -4,10 +4,10 @@ namespace SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class PageController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@Site/Default/index.html.twig');
+        return $this->render('@Site/Page/index.html.twig');
     }
 }

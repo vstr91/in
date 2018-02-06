@@ -14,3 +14,10 @@ and open the template in the editor.
 #menu-principal.navbar-header{
     margin-right: 10%;
 }
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
+background: #6d00c1; /* Old browsers */
+background: -moz-linear-gradient(left, #6d00c1 0%, #ff329c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #6d00c1 0%,#ff329c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #6d00c1 0%,#ff329c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d00c1', endColorstr='#ff329c',GradientType=1 ); /* IE6-9 */
