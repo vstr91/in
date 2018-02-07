@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>In</title>
         {% block css %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
 
             <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,45 +23,91 @@
         {% block body %}
             {% block topo %}
                 <div class="container-fluid">
-                    <div class="row" style="height: 10px; border: none">
-                        <div class="col-md-1 bg-danger"></div>
-                        <div class="col-md-3 bg-info"></div>
-                        <div class="col-md-4 bg-primary"></div>
-                        <div class="col-md-3 bg-success"></div>
-                        <div class="col-md-1 bg-warning"></div>
+                    <div class="row altura-topo">
+                        <div class="col-md-2 col-xs-2 bkg-verde"></div>
+                        <div class="col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-10 col-xs-10 coluna-topo bkg-roxo"></div>
+                                <div class="col-md-2 col-xs-2 coluna-topo bkg-laranja"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-12 col-xs-12 bkg-laranja"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-10 col-xs-10 coluna-topo bkg-laranja"></div>
+                                <div class="col-md-2 col-xs-2 coluna-topo bkg-rosa"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-8 col-xs-8 bkg-rosa"></div>
+                                <div class="col-md-4 col-xs-4 bkg-verde"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1 bkg-verde"></div>
+                        <div class="col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-4 col-xs-4 bkg-verde"></div>
+                                <div class="col-md-8 col-xs-8 bkg-roxo"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1 bkg-roxo"></div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-4 col-xs-4 bkg-roxo"></div>
+                                <div class="col-md-8 col-xs-8 bkg-laranja"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <div class="row altura-topo">
+                                <div class="col-md-2 col-xs-2 coluna-topo bkg-laranja"></div>
+                                <div class="col-md-10 col-xs-10 coluna-topo bkg-rosa"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1 bkg-rosa"></div>
                     </div>
                 </div>
-                <nav class="navbar navbar-expand" id="menu-principal">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                                    data-target="#navbarContent" aria-controls="navbarContent" 
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <a href="{{ path('site_homepage') }}" class="navbar-brand">INTEGRA</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navbarContent">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('site_homepage') }}">INTEGRA</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('site_homepage') }}">ANA PAULA MUKARZEL</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('site_homepage') }}">ESPECIALIDADES</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('site_homepage') }}">BLOG</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('site_homepage') }}">CONTATO</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div id="caixa-topo">
+                    <div class="container">
+                        <nav class="navbar navbar-expand" id="menu-principal">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                                            data-target="#navbarContent" aria-controls="navbarContent" 
+                                            aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <a href="{{ path('site_homepage') }}" class="navbar-brand" id="logo">INTEGRA</a>
+                                </div>
+                                <div class="collapse navbar-collapse float-right" id="navbarContent">
+                                    <ul class="navbar-nav" id="menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('site_homepage') }}">INTEGRA</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('site_homepage') }}">ANA PAULA MUKARZEL</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('site_homepage') }}">ESPECIALIDADES</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('site_homepage') }}">BLOG</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('site_homepage') }}">CONTATO</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
+                </div>
+                
+                
             {% endblock topo %}
         {% block conteudo %}{% endblock %}
         {% endblock %}

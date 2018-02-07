@@ -1,76 +1,164 @@
 {% extends "base.html.twig" %}
 {% block conteudo %}
     <div class="container-fluid">
-        <div class="row text-center">
+        <div class="row text-center secao">
             <div class="col-md-12">
-                BANNER
+                <img src="holder.js/100px800" class="img" />
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
+        <div class="row secao">
+            <div class="col-md-6 offset-md-3">
                 <div class="row">
-                    <div class="col-md-2">
-                        <img src="holder.js/200x200" class="img rounded-circle" />
+                    <div class="col-md-3">
+                        <img src="holder.js/300x300" class="img rounded-circle" />
                     </div>
-                    <div class="col-md-8 d-inline-block" style="padding-top: 3%">
-                        <h4>ANA PAULA MUKARZEL</h4>
-                        <p class="align-middle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Cras id dolor varius, sodales tellus vehicula, iaculis mi. Sed sit amet neque interdum, mollis magna nec, commodo ante. 
-                            Etiam ut tortor nec massa congue sollicitudin a eu risus. Vestibulum ipsum dui, ultricies vel tristique sed, cursus vel orci. 
-                            Nullam sit amet accumsan arcu, id tincidunt urna.</p>
-                        <a href="#" class="btn btn-outline-danger">SAIBA MAIS</a>
+                    <div class="col-md-7 offset-md-2 d-inline-block" style="padding-top: 5%">
+                        <h4 id="titulo-nome">ANA PAULA MUKARZEL</h4>
+                        <p class="align-middle">Ana Paula Mukarzel &eacute; professora, pedagoga e fonoaudi&oacute;loga. 
+                            Mestre em Ci&ecirc;ncias da Educa&ccedil;&atilde;o, P&oacute;s-Gtraduada em Comunica&ccedil;&atilde;o e Sa&uacute;de 
+                            e P&oacute;s-Graduanda em Neuropsicologia e em Psicomotricidade. Sua experi&ecirc;ncia de 13 anos em sala de aula 
+                            despertou o interesse sobre desenvolvimento infantil, linguagem e aprendizagem.</p>
+                        <a href="#" class="btn btn-outline-warning">SAIBA MAIS</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row text-center">
+        <div class="row text-center secao">
             <div class="col-md-12">
                 VIDEO
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-center">NOSSAS ESPECIALIDADES</h3>
+        <div class="secao">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center" id="titulo-engrenagens">NOSSAS ENGRENAGENS</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 offset-md-2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="card card-engrenagens">
+                                <div class="card-img">
+                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-center" id="titulo-cognicao">COGNI&Ccedil;&Atilde;O</h5>
+                                    <p>&Eacute; o ato ou processo da aquisi&ccedil;&atilde;o do conhecimento que se d&aacute; atrav&eacute;s da 
+                                        percep&ccedil;&atilde;o, da aten&ccedil;&atilde;o, associa&ccedil;&atilde;o, mem&oacute;ria, 
+                                        racioc&iacute;nio, ju&iacute;zo, imagina&ccedil;&atilde;o, pensamento e linguagem.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="card card-engrenagens">
+                                <div class="card-img">
+                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-center" id="titulo-linguagem">LINGUAGEM</h5>
+                                    <p>Linguagem verbal e linguagem n&atilde;o-verbal s&atilde;o utilizadas com meios sonoros, 
+                                        gr&aacute;ficos ou atrav&eacute;s de gestos faciais, orais, corporais; vocaliza&ccedil;&otilde;es, 
+                                        atitudes r&iacute;tmicas, m&uacute;sica, tom de voz e dramatiza&ccedil;&atilde;o.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="card card-engrenagens">
+                                <div class="card-img">
+                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-center" id="titulo-sentidos">SENTIDOS</h5>
+                                    <p>N&oacute;s produzimos uma variedade de sensa&ccedil;&otilde;es, que s&atilde;o percebidas 
+                                        pelo sistema nervoso e aos nossos &oacute;rg&atilde;os dos sentidos. Essas informa&ccedil;&otilde;es, 
+                                        atrav&eacute;s do sistema nervoso, ter&atilde;o respostas volunt&aacute;rias ou involunt&aacute;rias.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="card card-engrenagens">
+                                <div class="card-img">
+                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-center" id="titulo-comportamento">COMPORTAMENTO</h5>
+                                    <p>Comportamento &eacute; a forma de proceder que as pessoas ou os &oacute;rg&atilde;os tem diante dos diversos 
+                                        est&iacute;mulos que recebem e em rela&ccedil;&atilde;o ao ambiente no qual se desenvolvem.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2 offset-md-2">
-                <img src="holder.js/80x80" class="img text-center" />
-                <h4>TITULO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id dolor varius, sodales tellus vehicula, iaculis mi. 
-                    Sed sit amet neque interdum, mollis magna nec, commodo ante. Etiam ut tortor nec massa congue sollicitudin a eu risus. 
-                    Vestibulum ipsum dui, ultricies vel tristique sed, cursus vel orci.</p>
+        
+        <div class="secao">
+            <div class="row text-center">
+                <div class="col-md-12 p-0">
+                    <div class="row m-0 p-0">
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <img src="holder.js/80x80" class="img text-center" />
-                <h4>TITULO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id dolor varius, sodales tellus vehicula, iaculis mi. 
-                    Sed sit amet neque interdum, mollis magna nec, commodo ante. Etiam ut tortor nec massa congue sollicitudin a eu risus. 
-                    Vestibulum ipsum dui, ultricies vel tristique sed, cursus vel orci.</p>
-            </div>
-            <div class="col-md-2">
-                <img src="holder.js/80x80" class="img text-center" />
-                <h4>TITULO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id dolor varius, sodales tellus vehicula, iaculis mi. 
-                    Sed sit amet neque interdum, mollis magna nec, commodo ante. Etiam ut tortor nec massa congue sollicitudin a eu risus. 
-                    Vestibulum ipsum dui, ultricies vel tristique sed, cursus vel orci.</p>
-            </div>
-            <div class="col-md-2">
-                <img src="holder.js/80x80" class="img text-center" />
-                <h4>TITULO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id dolor varius, sodales tellus vehicula, iaculis mi. 
-                    Sed sit amet neque interdum, mollis magna nec, commodo ante. Etiam ut tortor nec massa congue sollicitudin a eu risus. 
-                    Vestibulum ipsum dui, ultricies vel tristique sed, cursus vel orci.</p>
+            <div class="row text-center">
+                <div class="col-md-12 p-0">
+                    <div class="row m-0 p-0">
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <img src="holder.js/100px250" class="img" />
+                        </div>
+                    </div>
+                    <br /><br />
+                    <a href="#" class="btn btn-outline-primary">VER MAIS</a>
+                </div>
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-md-12">
-                <p>FOTOS</p>
-                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row secao">
+            <div class="col-md-12" id="depoimento">
                 DEPOIMENTO
             </div>
         </div>

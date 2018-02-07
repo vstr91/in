@@ -1,0 +1,94 @@
+.bkg-verde {
+  background-color: #55AD97;
+}
+.bkg-roxo {
+  background-color: #98348b;
+}
+.bkg-laranja {
+  background-color: #F3951C;
+}
+.bkg-rosa {
+  background-color: #E7235D;
+}
+.nav-link {
+  color: #f43edc;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.altura-topo {
+  height: 8px;
+}
+.coluna-topo {
+  padding: 0;
+}
+.secao {
+  margin-bottom: 30px;
+}
+.icone-engrenagens {
+  margin: 0 auto;
+  display: block;
+  margin-top: 40px;
+}
+.card-engrenagens {
+  box-shadow: 5px 6px 25px .2px #DDD;
+  border-radius: 10px;
+  min-height: 430px;
+  text-align: center;
+  color: #AAA;
+  font-weight: bolder;
+}
+#caixa-topo {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  z-index: 1000;
+}
+#logo {
+  margin-left: 100px;
+}
+#menu {
+  position: absolute;
+  right: 100px;
+  background-color: transparent;
+}
+#titulo-nome {
+  color: #ff9710;
+  font-weight: bold;
+}
+#titulo-engrenagens {
+  color: #98348b;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+#titulo-cognicao {
+  color: #16ecb7;
+  font-weight: bold;
+}
+#titulo-linguagem {
+  color: #ff9710;
+  font-weight: bold;
+}
+#titulo-sentidos {
+  color: #ff3e77;
+  font-weight: bold;
+}
+#titulo-comportamento {
+  color: #c10ba9;
+  font-weight: bold;
+}
+#depoimento {
+  height: 500px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
+  background: #ff3e77;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #4c1a45 0%, #ff3e77 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #4c1a45 0%, #ff3e77 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #4c1a45 0%, #ff3e77 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c1a45, endColorstr=#ff3e77, GradientType=1);
+  /* IE6-9 */
+}
+/*# sourceMappingURL=estilos.css.map */
