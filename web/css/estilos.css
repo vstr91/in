@@ -23,7 +23,8 @@
   padding: 0;
 }
 .secao {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
+  float: left;
 }
 .icone-engrenagens {
   margin: 0 auto;
@@ -37,6 +38,21 @@
   text-align: center;
   color: #AAA;
   font-weight: bolder;
+}
+.aspa-depoimento {
+  font-size: 80px;
+  margin-top: 50px;
+  display: block;
+}
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+.carousel-indicators {
+  position: absolute;
+}
+.grid-sizer {
+  width: 10%;
 }
 #caixa-topo {
   position: absolute;
@@ -77,8 +93,24 @@
   color: #c10ba9;
   font-weight: bold;
 }
+#video {
+  height: 500px;
+  color: #FFF;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
+  background: #ffad43;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #E7235D 0%, #ffb85d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #E7235D 0%, #ffb85d 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #E7235D 0%, #ffb85d 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E7235D, endColorstr=#ffb85d, GradientType=1);
+  /* IE6-9 */
+}
 #depoimento {
   height: 500px;
+  color: #FFF;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
   background: #ff3e77;
   /* Old browsers */
@@ -89,6 +121,25 @@
   background: linear-gradient(to right, #4c1a45 0%, #ff3e77 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c1a45, endColorstr=#ff3e77, GradientType=1);
+  /* IE6-9 */
+}
+#titulo-contato {
+  color: #ff9710;
+  font-weight: bold;
+}
+#rodape {
+  height: 500px;
+  color: #FFF;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
+  background: #45f0c5;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #33695c 0%, #36ffcd 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #33695c 0%, #36ffcd 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #33695c 0%, #36ffcd 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33695c, endColorstr=#36ffcd, GradientType=1);
   /* IE6-9 */
 }
 /*# sourceMappingURL=estilos.css.map */

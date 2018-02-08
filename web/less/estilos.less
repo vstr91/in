@@ -39,7 +39,8 @@
 }
 
 .secao{
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
+    float: left;
 }
 
 .icone-engrenagens{
@@ -56,6 +57,28 @@
     color: #AAA;
     font-weight: bolder;
 }
+
+.aspa-depoimento{
+    font-size: 80px;
+    margin-top: 50px;
+    display: block;
+}
+
+.carousel-inner, .carousel-item{
+    height: 100%;
+}
+
+.carousel-indicators{
+    position: absolute;
+}
+
+.grid-sizer{
+    width: 10%;
+}
+
+// FIM CLASSES
+
+// ID
 
 #caixa-topo{
     position: absolute;
@@ -105,12 +128,40 @@
     font-weight: bold;
 }
 
+#video{
+    height: 500px;
+    color: #FFF;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
+    background: lighten(saturate(@laranja, 50%), 10%); /* Old browsers */
+    background: -moz-linear-gradient(left, @rosa 0%, lighten(saturate(@laranja, 90%), 15%) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, @rosa 0%,lighten(saturate(@laranja, 90%), 15%) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, @rosa 0%,lighten(saturate(@laranja, 90%), 15%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@rosa, endColorstr=lighten(saturate(@laranja, 90%), 15%),GradientType=1 ); /* IE6-9 */
+}
+
 #depoimento{
     height: 500px;
+    color: #FFF;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
     background: lighten(saturate(@rosa, 50%), 10%); /* Old browsers */
     background: -moz-linear-gradient(left, darken(@roxo, 20%) 0%, lighten(saturate(@rosa, 50%), 10%) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, darken(@roxo, 20%) 0%,lighten(saturate(@rosa, 50%), 10%) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, darken(@roxo, 20%) 0%,lighten(saturate(@rosa, 50%), 10%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=darken(@roxo, 20%), endColorstr=lighten(saturate(@rosa, 50%), 10%),GradientType=1 ); /* IE6-9 */
+}
+
+#titulo-contato{
+    color: saturate(@laranja, 40%);
+    font-weight: bold;
+}
+
+#rodape{
+    height: 500px;
+    color: #FFF;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d00c1+0,ff329c+100 */
+    background: lighten(saturate(@verde, 50%), 10%); /* Old browsers */
+    background: -moz-linear-gradient(left, darken(@verde, 20%) 0%, lighten(saturate(@verde, 70%), 10%) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, darken(@verde, 20%) 0%,lighten(saturate(@verde, 70%), 10%) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, darken(@verde, 20%) 0%,lighten(saturate(@verde, 70%), 10%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=darken(@verde, 20%), endColorstr=lighten(saturate(@verde, 70%), 10%),GradientType=1 ); /* IE6-9 */
 }

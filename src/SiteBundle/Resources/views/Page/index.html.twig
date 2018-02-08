@@ -1,20 +1,133 @@
 {% extends "base.html.twig" %}
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/jquery.fullpage.css') }}" />
+{% endblock %}
+{% block topo %}{% endblock %}
 {% block conteudo %}
-    <div class="container-fluid">
-        <div class="row text-center secao">
-            <div class="col-md-12">
-                <img src="holder.js/100px800" class="img" />
+    <div class="container-fluid p-0 mw-100" id="fullpage">
+        <div class="row text-center p-0 m-0 secao mw-100" data-section-name="A">
+            <!-- BANNER -->
+            <div id="banner" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#banner" data-slide-to="0" class="active"></li>
+                    <li data-target="#banner" data-slide-to="1"></li>
+                    <li data-target="#banner" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background-image: url('{{ asset('imagens/teste.jpg') }}'); background-size: cover">
+                        <div class="carousel-caption">
+                            <a href="#" class="btn btn-outline-warning" style="margin-bottom: 10%">Saiba Mais</a>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item" style="background-image: url('{{ asset('imagens/holder-banner.png') }}'); background-size: cover">
+                        <a href="#" class="btn btn-outline-warning">Saiba Mais</a>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('{{ asset('imagens/holder-banner.png') }}'); background-size: cover">
+                        <a href="#" class="btn btn-outline-warning">Saiba Mais</a>
+                    </div>
+                </div>
             </div>
+            <!-- FIM BANNER -->
+
+            <!-- MENU -->
+            <div class="container-fluid" style="z-index: 2000; position: absolute; top: 0">
+                <div class="row altura-topo">
+                    <div class="col-md-2 col-sm-2 col-xs-2 bkg-verde"></div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-10 col-sm-10 col-xs-10 coluna-topo bkg-roxo"></div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 coluna-topo bkg-laranja"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-12 col-sm-12 col-xs-12 bkg-laranja"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-10 col-sm-10 col-xs-10 coluna-topo bkg-laranja"></div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 coluna-topo bkg-rosa"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-8 col-sm-8 col-xs-8 bkg-rosa"></div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 bkg-verde"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 bkg-verde"></div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-4 col-sm-4 col-xs-4 bkg-verde"></div>
+                            <div class="col-md-8 col-sm-8 col-xs-8 bkg-roxo"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 bkg-roxo"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-4 col-sm-4 col-xs-4 bkg-roxo"></div>
+                            <div class="col-md-8 col-sm-8 col-xs-8 bkg-laranja"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <div class="row altura-topo">
+                            <div class="col-md-2 col-sm-2 col-xs-2 coluna-topo bkg-laranja"></div>
+                            <div class="col-md-10 col-sm-10 col-xs-10 coluna-topo bkg-rosa"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 bkg-rosa"></div>
+                </div>
+            </div>
+            <div id="caixa-topo">
+                <div class="container">
+                    <nav class="navbar navbar-expand" id="menu-principal">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                                        data-target="#navbarContent" aria-controls="navbarContent" 
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a href="{{ path('site_homepage') }}" class="navbar-brand" id="logo">INTEGRA</a>
+                            </div>
+                            <div class="collapse navbar-collapse float-right" id="navbarContent">
+                                <ul class="navbar-nav" id="menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('site_homepage') }}">INTEGRA</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('site_homepage') }}">ANA PAULA MUKARZEL</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('site_homepage') }}">ESPECIALIDADES</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('site_homepage') }}">BLOG</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('site_homepage') }}">CONTATO</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- FIM MENU -->
+
         </div>
-        <div class="row secao">
+        <div class="row p-0 m-0 mw-100 secao" data-section-name="A">
             <div class="col-md-6 offset-md-3">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="holder.js/300x300" class="img rounded-circle" />
+                        <img src="{{ asset('imagens/holder-foto.png') }}" class="img rounded-circle mh-100" />
                     </div>
                     <div class="col-md-7 offset-md-2 d-inline-block" style="padding-top: 5%">
-                        <h4 id="titulo-nome">ANA PAULA MUKARZEL</h4>
-                        <p class="align-middle">Ana Paula Mukarzel &eacute; professora, pedagoga e fonoaudi&oacute;loga. 
+                        <h4 id="titulo-nome" class="text-left">ANA PAULA MUKARZEL</h4>
+                        <p class="text-left">Ana Paula Mukarzel &eacute; professora, pedagoga e fonoaudi&oacute;loga. 
                             Mestre em Ci&ecirc;ncias da Educa&ccedil;&atilde;o, P&oacute;s-Gtraduada em Comunica&ccedil;&atilde;o e Sa&uacute;de 
                             e P&oacute;s-Graduanda em Neuropsicologia e em Psicomotricidade. Sua experi&ecirc;ncia de 13 anos em sala de aula 
                             despertou o interesse sobre desenvolvimento infantil, linguagem e aprendizagem.</p>
@@ -23,24 +136,24 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center secao">
+        <div class="row p-0 m-0 mw-100 text-center secao" id="video" data-section-name="A">
             <div class="col-md-12">
-                VIDEO
+                <img src="{{ asset('imagens/holder-play.png') }}" class="img rounded-circle mx-auto m-5" />
             </div>
         </div>
-        <div class="secao">
-            <div class="row">
+        <div class="secao" data-section-name="A">
+            <div class="row p-0 m-0 mw-100">
                 <div class="col-md-12">
                     <h3 class="text-center" id="titulo-engrenagens">NOSSAS ENGRENAGENS</h3>
                 </div>
             </div>
-            <div class="row">
+            <div class="row p-0 m-0 mw-100">
                 <div class="col-md-2 offset-md-2">
                     <div class="row">
                         <div class="col-md-11">
-                            <div class="card card-engrenagens">
+                            <div class="card card-engrenagens mb-5">
                                 <div class="card-img">
-                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                    <img src="{{ asset('imagens/holder-icone.png') }}" class="img icone-engrenagens" />
                                 </div>
                                 <div class="card-body">
                                     <h5 class="text-center" id="titulo-cognicao">COGNI&Ccedil;&Atilde;O</h5>
@@ -55,9 +168,9 @@
                 <div class="col-md-2">
                     <div class="row">
                         <div class="col-md-11">
-                            <div class="card card-engrenagens">
+                            <div class="card card-engrenagens mb-5">
                                 <div class="card-img">
-                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                    <img src="{{ asset('imagens/holder-icone.png') }}" class="img icone-engrenagens" />
                                 </div>
                                 <div class="card-body">
                                     <h5 class="text-center" id="titulo-linguagem">LINGUAGEM</h5>
@@ -72,9 +185,9 @@
                 <div class="col-md-2">
                     <div class="row">
                         <div class="col-md-11">
-                            <div class="card card-engrenagens">
+                            <div class="card card-engrenagens mb-5">
                                 <div class="card-img">
-                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                    <img src="{{ asset('imagens/holder-icone.png') }}" class="img icone-engrenagens" />
                                 </div>
                                 <div class="card-body">
                                     <h5 class="text-center" id="titulo-sentidos">SENTIDOS</h5>
@@ -89,9 +202,9 @@
                 <div class="col-md-2">
                     <div class="row">
                         <div class="col-md-11">
-                            <div class="card card-engrenagens">
+                            <div class="card card-engrenagens mb-5">
                                 <div class="card-img">
-                                    <img src="holder.js/80x80" class="img icone-engrenagens" />
+                                    <img src="{{ asset('imagens/holder-icone.png') }}" class="img icone-engrenagens" />
                                 </div>
                                 <div class="card-body">
                                     <h5 class="text-center" id="titulo-comportamento">COMPORTAMENTO</h5>
@@ -104,63 +217,131 @@
                 </div>
             </div>
         </div>
-        
-        <div class="secao">
-            <div class="row text-center">
-                <div class="col-md-12 p-0">
-                    <div class="row m-0 p-0">
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                    </div>
+
+        <div class="secao" data-section-name="A" style="top: 0">
+            <div class="row p-0 m-0 mw-100 text-center">
+                <div class="col-md-12 p-0 m-0 grid">
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
+                    <img src="{{ asset('imagens/holder-galeria.png') }}" class="img grid-item" />
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-12 p-0">
-                    <div class="row m-0 p-0">
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <img src="holder.js/100px250" class="img" />
-                        </div>
-                    </div>
-                    <br /><br />
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <br /><br /><br /><br />
                     <a href="#" class="btn btn-outline-primary">VER MAIS</a>
+                    <br /><br /><br /><br />
                 </div>
             </div>
         </div>
-        <div class="row secao">
-            <div class="col-md-12" id="depoimento">
-                DEPOIMENTO
+        <div class="secao p-0 m-0 mw-100" id="depoimento" data-section-name="A">
+            <div class="row p-0 m-0">
+                <div class="col-md-2 offset-md-5 p-0 text-center">
+                    <span class="aspa-depoimento">"</span>
+                </div>
+            </div>
+            <div class="row p-0 m-0">
+                <div class="col-md-6 offset-md-3 p-0 text-center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend augue ac tincidunt suscipit. 
+                        Nunc sollicitudin mattis faucibus. Vivamus rhoncus viverra risus, sed pellentesque nulla congue nec. 
+                        Fusce venenatis, odio vitae viverra porta, risus elit mollis eros, sed tincidunt lorem dolor id nisl. 
+                        Nullam cursus arcu ut porta placerat. Fusce sit amet commodo ipsum, quis pulvinar purus. 
+                        Curabitur risus urna, vehicula id convallis vitae, aliquet id diam. Cras id nulla a tellus malesuada 
+                        vestibulum non ac arcu. Sed eu gravida nibh, et luctus arcu. Sed quam sapien, mollis ut ante in, aliquam aliquam libero.</p>
+                    <h4>Lorem Ipsum Generator<br /><small>CEO</small></h4>
+                </div>
+            </div>
+        </div>
+        <div class="row p-0 m-0 secao" data-section-name="A">
+            <div class="col-md-3 offset-md-3 float-left">
+                <h4 id="titulo-contato">CONTATO</h4>
+                <form>
+                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                    <br />
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" />
+                    <br />
+                    <input type="text" name="assunto" id="assunto" class="form-control" placeholder="Assunto" />
+                    <br />
+                    <textarea name="mensagem" id="mensagem" rows="5" class="form-control" placeholder="Mensagem"></textarea>
+                    <br />
+                    <input type="submit" value="Enviar" class="btn btn-outline-warning" />
+                </form>
+            </div>
+            <div class="col-md-3 float-left">
+                <img src="{{ asset('imagens/holder-mapa.png') }}" class="img mw-100" />
+            </div>
+        </div>
+        <div class="row p-0 m-0 pt-5 secao fp-auto-height" id="rodape">
+            <div class="col-md-2 offset-md-3 mt-5 float-left">
+                <img src="{{ asset('imagens/holder-logo.png') }}" class="img" />
+                <p>A equipe integra traz como diferencial o olhar e o trabalho globalizado e transdisciplinar!</p>
+            </div>
+            <div class="col-md-2 mt-5 float-left">
+                <div class="row">
+                    <div class="col-md-1 mr-1">
+                        <img src="{{ asset('imagens/holder-marker.png') }}" class="img" />
+                    </div>
+                    <div class="col-md-10">
+                        <p>Rua Dom Guilherme, N&ordm; 227<br />Centro - Barra do Pira&iacute; - RJ</p>
+                        <p style="font-weight: bold">(24) 2443-1810<br />(24) 98881-7186</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mt-5 float-left">
+                <form class="form-inline">
+                    <input type="text" class="form-control mr-2" name="news" id="news" />
+                    <input type="submit" class="btn" value="Enviar" />
+                </form>
+                <br />
+                <img src="{{ asset('imagens/holder-social.png') }}" class="img rounded-circle" />
+                &nbsp;<img src="{{ asset('imagens/holder-social.png') }}" class="img rounded-circle" />
+                &nbsp;<img src="{{ asset('imagens/holder-social.png') }}" class="img rounded-circle" />
+                <br /><br />
+                <small>Website desenvolvido por Start Publicidade</small>
             </div>
         </div>
     </div>
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.fullpage.js') }}"></script>
+    <script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $largura = $(window).width();
+            
+            if($largura > 768){
+                $('#fullpage').fullpage({
+                    sectionSelector: '.secao',
+                    fitToSection: true
+                });
+            } else{
+                $('#fullpage').fullpage({
+                    sectionSelector: '.secao',
+                    autoScrolling: false
+                });
+            }
+
+            $('.grid').masonry({
+                // options...
+                itemSelector: '.grid-item'
+            });
+        });
+    </script>
 {% endblock %}

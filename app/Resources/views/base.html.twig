@@ -22,53 +22,53 @@
     <body>
         {% block body %}
             {% block topo %}
-                <div class="container-fluid">
+                <div class="container-fluid" style="z-index: 2000; position: absolute; top: 0">
                     <div class="row altura-topo">
-                        <div class="col-md-2 col-xs-2 bkg-verde"></div>
-                        <div class="col-md-1 col-xs-1">
+                        <div class="col-md-2 col-sm-2 col-xs-2 bkg-verde"></div>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-10 col-xs-10 coluna-topo bkg-roxo"></div>
-                                <div class="col-md-2 col-xs-2 coluna-topo bkg-laranja"></div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 coluna-topo bkg-roxo"></div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 coluna-topo bkg-laranja"></div>
                             </div>
                         </div>
-                        <div class="col-md-1 col-xs-1">
+                        <div class="col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-12 col-xs-12 bkg-laranja"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 bkg-laranja"></div>
                             </div>
                         </div>
-                        <div class="col-md-1 col-xs-1">
+                        <div class="col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-10 col-xs-10 coluna-topo bkg-laranja"></div>
-                                <div class="col-md-2 col-xs-2 coluna-topo bkg-rosa"></div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 coluna-topo bkg-laranja"></div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 coluna-topo bkg-rosa"></div>
                             </div>
                         </div>
-                        <div class="col-md-1 col-xs-1">
+                        <div class="col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-8 col-xs-8 bkg-rosa"></div>
-                                <div class="col-md-4 col-xs-4 bkg-verde"></div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 bkg-rosa"></div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 bkg-verde"></div>
                             </div>
                         </div>
-                        <div class="col-md-1 col-xs-1 bkg-verde"></div>
-                        <div class="col-md-1 col-xs-1">
+                        <div class="col-md-1 col-sm-1 col-xs-1 bkg-verde"></div>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-4 col-xs-4 bkg-verde"></div>
-                                <div class="col-md-8 col-xs-8 bkg-roxo"></div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 bkg-verde"></div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 bkg-roxo"></div>
                             </div>
                         </div>
-                        <div class="col-md-1 col-xs-1 bkg-roxo"></div>
-                        <div class="col-lg-1 col-md-1 col-xs-1">
+                        <div class="col-md-1 col-sm-1 col-xs-1 bkg-roxo"></div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-4 col-xs-4 bkg-roxo"></div>
-                                <div class="col-md-8 col-xs-8 bkg-laranja"></div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 bkg-roxo"></div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 bkg-laranja"></div>
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-1 col-xs-1">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                             <div class="row altura-topo">
-                                <div class="col-md-2 col-xs-2 coluna-topo bkg-laranja"></div>
-                                <div class="col-md-10 col-xs-10 coluna-topo bkg-rosa"></div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 coluna-topo bkg-laranja"></div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 coluna-topo bkg-rosa"></div>
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-1 col-xs-1 bkg-rosa"></div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 bkg-rosa"></div>
                     </div>
                 </div>
                 <div id="caixa-topo">
@@ -111,11 +111,10 @@
             {% endblock topo %}
         {% block conteudo %}{% endblock %}
         {% endblock %}
-        {% block javascripts %}
+        {% block js %}
             <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
             <script src="{{ asset('js/popper.min.js') }}"></script>
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-{#            <script src="{{ asset('js/scrollify.min.js') }}"></script>#}
             <script src="{{ asset('js/holder.min.js') }}"></script>
         {% endblock %}
     </body>
