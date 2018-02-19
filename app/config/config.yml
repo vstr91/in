@@ -7,7 +7,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: pt
+    locale: pt_BR
 
 framework:
     #esi: ~
@@ -31,11 +31,15 @@ framework:
     assets: ~
     php_errors:
         log: true
+    translator: ~
 
 # Twig Configuration
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_4_layout.html.twig']
+#    form:
+#        resources: ['bootstrap_3_layout.html.twig']
 
 # Doctrine Configuration
 doctrine:
@@ -65,4 +69,55 @@ swiftmailer:
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
-    spool: { type: memory }
+#    spool: { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: SiteBundle\Entity\Usuario
+    from_email:
+        address: '%mailer_user%'
+        sender_name: '%mailer_user%'
+    service:                               
+        mailer: fos_user.mailer.twig_swift
+        
+stof_doctrine_extensions:
+    default_locale: pt_BR
+    orm:
+        default:
+            sluggable: true
+            
+liip_imagine :
+
+    # configure resolvers
+    resolvers :
+
+        # setup the default resolver
+        default :
+
+            # use the default web path
+            web_path : ~
+
+    # your filter sets are defined here
+    filter_sets :
+
+        # use the default cache configuration
+        cache : ~
+        
+        thumb_admin:
+            quality: 70
+            
+            filters:
+                thumbnail: {size: [150, 90], mode: inset}
+        
+        thumb_fotos:
+            quality: 70
+            
+            filters:
+                thumbnail: {size: [300, 200], mode: outbound}
+                
+        thumb_blog_interno:
+            quality: 100
+            
+            filters:
+                thumbnail: {size: [500, 400], mode: inset}

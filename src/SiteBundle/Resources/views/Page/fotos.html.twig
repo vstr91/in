@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/jquery.mosaic.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}" />
+{% endblock %}
+    {% block topo %}
+        {% include '@Site/Component/menu-interno.html.twig' %}
+    {% endblock topo %}
+        {% block conteudo %}
+        <div class="container-fluid" style="min-height: 100%;">
+            <div class="row text-center">
+                <div class="col-md-12 mt-5 pt-5">
+                    <h3 id="titulo-engrenagens">Fotos</h3>
+                </div>
+            </div>
+            <div class="row p-0 m-0 mw-100 text-center">
+                <div class="col-md-12 p-0 m-0 grid">
+                    {% for foto in fotos %}
+                        <a href="{{ asset('uploads/foto/'~foto.imagem) }}" data-lightbox="fotos" data-title="{{ foto.legenda }}" class="grid-item" >
+                            <img src="{{ asset('/uploads/foto/'~foto.imagem) | imagine_filter('thumb_fotos') }}" class="img" /></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.mosaic.min.js') }}"></script>
+    <script src="{{ asset('js/lightbox.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            lightbox.option({
+                'albumLabel': "Imagem %1 de %2",
+                'wrapAround': true
+            });
+
+            $('.grid').Mosaic({
+                maxRowHeight: 200,
+                maxRowHeightPolicy: 'skip'
+            });
+            
+        });
+    </script>
+{% endblock %}

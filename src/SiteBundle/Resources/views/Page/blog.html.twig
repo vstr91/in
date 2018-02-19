@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+    {% block topo %}
+        {% include '@Site/Component/menu-interno.html.twig' %}
+    {% endblock topo %}
+        {% block conteudo %}
+        <div class="container-fluid" style="min-height: 100%;">
+            <div class="row text-center">
+                <div class="col-md-12 mt-5 pt-5">
+                    <h3 id="titulo-engrenagens">Blog</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-2">
+                    {% for postagem in postagens %}
+                        <div class="card mb-5">
+                            <div class="card-header card-topo">
+                                <h4 class="card-title">{{ postagem.titulo }}
+                                    <small class="float-right">{{ postagem.dataCadastro|date('d/m/Y H:i') }}</small></h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="{{ asset('/uploads/postagem/'~postagem.imagem) | imagine_filter('thumb_fotos') }}" 
+                                             class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>{{ postagem.resumo|striptags }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer card-rodape">
+                                <a href="{{ path('site_blog_postagem', {'slug': postagem.slug}) }}" class="float-right">Continuar Lendo</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endblock %}

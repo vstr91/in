@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+    {% block topo %}
+        {% include '@Site/Component/menu-interno.html.twig' %}
+    {% endblock topo %}
+        {% block conteudo %}
+        <div class="container-fluid text-comum of-serif-itc" style="min-height: 100%;">
+            <div class="row text-center">
+                <div class="col-md-12 mt-5 pt-5">
+                    <h3>{{ postagem.titulo }}<br /><br /><small>{{ postagem.resumo|raw }}</small><br /></h3>
+                </div>
+            </div>
+                <div class="row p-0 m-0">
+                    <div class="col-md-12">
+                        <img src="{{ asset('/uploads/postagem/'~postagem.imagem) | imagine_filter('thumb_blog_interno') }}" 
+                             class="float-left mr-3 ml-3 mb-2" />
+                        <p class="float-left">{{ postagem.descricao|raw }}</p>
+                    </div>
+                </div>
+                <div class="row p-0 m-0">
+                    <div class="col-md-12">
+                        <a href="{{ path('site_blog') }}">Voltar para blog</a><br /><br />
+                    </div>
+                </div>
+        </div>
+        {% endblock %}

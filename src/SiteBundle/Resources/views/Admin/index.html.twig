@@ -1,0 +1,98 @@
+{% extends "@Site/Page/central.html.twig" %}  
+{% block body %}
+    {#{% block topo %} 
+
+    {% endblock %}#}
+    {% block conteudo %}
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="{{ path('site_admin_homepage') }}">&Aacute;rea Administrativa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarMenu" aria-controls="navbarMenu" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="color: black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto navbar-right">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="link-senha">Alterar Senha</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('fos_user_security_logout') }}" 
+                           class="nav-link navbar-right">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid" style="min-height: 100%;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Ol&aacute;, {{ usuario.username }}!</h4>
+                    <p>Seja bem vindo &agrave; central do administrador!</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="btn-group">
+                        <a href="{{ path('site_admin_postagens') }}" class="btn btn-primary">Gerenciar Postagens</a>
+                        <a href="{{ path('site_admin_banners') }}" class="btn btn-primary">Gerenciar Banners</a>
+                        <a href="{{ path('site_admin_fotos') }}" class="btn btn-primary">Gerenciar Fotos</a>
+                        {#<a href="{{ path('site_admin_parametros_email') }}" 
+                               class="btn btn-primary">Gerenciar Par&acirc;metros de Email</a>#}
+                    </div>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal-senha" tabindex="-1" role="dialog" aria-labelledby="modal-label" 
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Alterar Senha</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="conteudo-modal">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block rodape %} {% endblock %}
+    {% block js %}
+        {{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                {% for flashMessage in app.session.flashbag.get('success') %}
+
+                    alert('{{ flashMessage }}');
+
+                {% endfor %}
+                
+                $('#link-senha').click(function(){
+                    $url = '{{ path('fos_user_change_password') }}';
+                    
+                    $.ajax({
+                        type: 'GET',
+                        url: $url,
+                        success: function (response) {
+                            $('#conteudo-modal').html(response);
+                            $('#modal-senha').modal('show');
+                        }
+                    });
+                    
+                    return false;
+                    
+                });
+                
+            });
+        </script>
+    {% endblock js %}
+{% endblock %}

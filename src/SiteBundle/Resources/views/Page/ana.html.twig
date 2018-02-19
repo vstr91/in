@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+    {% block topo %}
+        {% include '@Site/Component/menu-interno.html.twig' %}
+    {% endblock topo %}
+        {% block conteudo %}
+        <div class="container-fluid text-comum" style="min-height: 100%;">
+            <div class="col-md-6 offset-3">
+                <div class="row mt-5 pt-5">
+                    <div class="col-md-4">
+                        <img src="{{ asset('imagens/foto.png') }}" class="img rounded-circle mh-100" />
+                    </div>
+                    <div class="col-md-6 offset-md-2 d-inline-block">
+                        <h4 id="titulo-nome" class="text-left">ANA PAULA MUKARZEL</h4>
+                        <p class="text-left">Ana Paula Mukarzel &eacute; professora, pedagoga e fonoaudi&oacute;loga. 
+                            Mestre em Ci&ecirc;ncias da Educa&ccedil;&atilde;o, P&oacute;s-Graduada em Comunica&ccedil;&atilde;o e Sa&uacute;de 
+                            e P&oacute;s-Graduanda em Neuropsicologia e em Psicomotricidade. Sua experi&ecirc;ncia de 13 anos em sala de aula 
+                            despertou o interesse sobre desenvolvimento infantil, linguagem e aprendizagem.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        {% endblock %}

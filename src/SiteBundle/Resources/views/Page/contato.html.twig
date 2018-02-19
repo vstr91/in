@@ -1,0 +1,85 @@
+{% extends "base.html.twig" %}
+{% block conteudo %}
+    <div class="container-fluid" style="min-height: 100%;">
+        <div class="row text-center">
+            <div class="col-md-12 mt-5 pt-5">
+                <h3 id="titulo-cognicao">CONTATO</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form name="form-contato" id="form-contato" method="POST" 
+                      action="{{ path('site_processa_contato') }}">
+                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                    <br />
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" />
+                    <br />
+                    <input type="text" name="assunto" id="assunto" class="form-control" placeholder="Assunto" />
+                    <br />
+                    <textarea name="mensagem" id="mensagem" rows="5" class="form-control" placeholder="Mensagem"></textarea>
+                    <br />
+                    <input type="submit" value="Enviar" class="btn btn-outline-warning" id="btn-submit" 
+                           data-loading-text="Enviando mensagem..." />
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.form.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $('#form-contato').validate({
+                rules: {
+                    'nome': "required",
+                    'email':{
+                        required: true,
+                        email: true
+                    },
+                    'assunto': {
+                        required: true
+                    },
+                    'mensagem': {
+                        required: true
+                    }
+                },
+                messages: {
+                    'nome': "Por favor informe seu nome",
+                    'email':{
+                        required: "Por favor informe seu email",
+                        email: "Por favor informe um email válido"
+                    },
+                    'assunto': {
+                        required: "Por favor informe o assunto"
+                    },
+                    'mensagem': {
+                        required: "Por favor digite sua mensagem"
+                    }
+                },
+                submitHandler: function(form) {
+                    
+                    $('#btn-submit').val("Enviando...");
+                    $('#btn-submit').attr('disabled', 'disabled');
+                    
+                    $(form).ajaxSubmit({
+                        success: function(){
+                            alert("Mensagem enviada. Obrigado!");
+                            $(form)[0].reset();
+                            $('#btn-submit').val("Enviar");
+                            $('#btn-submit').attr('disabled', 'enabled');
+                        },
+                        error: function(){
+                            alert("Houve erro ao processar sua mensagem. Por favor tente novamente.");
+                            $('#btn-submit').val("Enviar");
+                            $('#btn-submit').attr('disabled', 'enabled');
+                        }
+                    });
+                }
+            });
+            
+        });
+    </script>
+{% endblock %}

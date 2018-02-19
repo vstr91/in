@@ -1,3 +1,119 @@
 site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Page:index }
+    
+site_processa_contato:
+    path:  /contato/processa
+    defaults: { _controller: SiteBundle:Page:processarContato }
+    requirements:
+        _method: POST
+        
+site_integra:
+    path:     /integra
+    defaults: { _controller: SiteBundle:Page:integra }
+
+site_ana:
+    path:     /ana-paula-mukarzel
+    defaults: { _controller: SiteBundle:Page:ana }
+
+site_especialidades:
+    path:     /especialidades
+    defaults: { _controller: SiteBundle:Page:especialidades }
+
+site_blog:
+    path:     /blog
+    defaults: { _controller: SiteBundle:Page:blog }
+    
+site_contato:
+    path:     /contato
+    defaults: { _controller: SiteBundle:Page:contato }
+    
+site_blog_postagem:
+    path:     /blog/{slug}
+    defaults: { _controller: SiteBundle:Page:blogPostagem }
+    
+site_fotos:
+    path:     /fotos
+    defaults: { _controller: SiteBundle:Page:fotos }
+
+################### ADMIN ########################
+
+site_admin:
+    path:     /admin/login
+    defaults: { _controller: SiteBundle:Page:central }
+    
+site_admin_homepage:
+    path:     /admin/home
+    defaults: { _controller: SiteBundle:Admin:index }
+    
+################### POSTAGENS ###################
+
+site_admin_postagens:
+    path:     /admin/postagens
+    defaults: { _controller: SiteBundle:Admin:indexPostagem }
+    
+site_admin_postagens_cadastra:
+    path:  /admin/postagens/cadastra/{id_postagem}
+    defaults: { _controller: SiteBundle:Postagem:cadastrar, id_postagem: -1 }
+    requirements:
+        _method: POST
+
+site_admin_postagens_form:
+    path:  /admin/postagens/form/{id_postagem}
+    defaults: { _controller: SiteBundle:Postagem:form, id_postagem: -1 }
+    
+site_admin_postagens_exclui:
+    path:  /admin/postagens/exclui/{id_postagem}
+    defaults: { _controller: SiteBundle:Postagem:excluir, id_postagem: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM POSTAGENS ###################
+
+################### BANNERS ###################
+
+site_admin_banners:
+    path:     /admin/banners
+    defaults: { _controller: SiteBundle:Admin:indexBanner }
+    
+site_admin_banners_cadastra:
+    path:  /admin/banners/cadastra/{id_banner}
+    defaults: { _controller: SiteBundle:Banner:cadastrar, id_banner: -1 }
+    requirements:
+        _method: POST
+
+site_admin_banners_form:
+    path:  /admin/banners/form/{id_banner}
+    defaults: { _controller: SiteBundle:Banner:form, id_banner: -1 }
+    
+site_admin_banners_exclui:
+    path:  /admin/banners/exclui/{id_banner}
+    defaults: { _controller: SiteBundle:Banner:excluir, id_banner: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM BANNERS ###################
+
+################### FOTOS ###################
+
+site_admin_fotos:
+    path:     /admin/fotos
+    defaults: { _controller: SiteBundle:Admin:indexFoto }
+    
+site_admin_fotos_cadastra:
+    path:  /admin/fotos/cadastra/{id_foto}
+    defaults: { _controller: SiteBundle:Foto:cadastrar, id_foto: -1 }
+    requirements:
+        _method: POST
+
+site_admin_fotos_form:
+    path:  /admin/fotos/form/{id_foto}
+    defaults: { _controller: SiteBundle:Foto:form, id_foto: -1 }
+    
+site_admin_fotos_exclui:
+    path:  /admin/fotos/exclui/{id_foto}
+    defaults: { _controller: SiteBundle:Foto:excluir, id_foto: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM FOTOS ###################

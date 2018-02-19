@@ -1,0 +1,139 @@
+{# empty Twig template #}
+{% extends "@Site/Page/central.html.twig" %}  
+{% block body %}
+    {% block conteudo %}
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="{{ path('site_admin_homepage') }}">&Aacute;rea Administrativa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarMenu" aria-controls="navbarMenu" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="color: black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="{{ path('fos_user_security_logout') }}" 
+                           class="nav-link navbar-right">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center">Gerenciamento de Banners</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_start(form, {'action': path('site_admin_banners_cadastra', {'id_banner': -1})}) }}
+                        {{ form_widget(form) }}
+                        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                    {{ form_end(form) }}
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <td>Imagem</td>
+                                    <td>Imagem Mobile</td>
+                                    <td>Link</td>
+                                    <td>A&ccedil;&otilde;es</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for banner in banners %}
+                                    <tr>
+                                        <td><img class="thumbnail" src="{{ asset('/uploads/banner/'~banner.imagem) | imagine_filter('thumb_admin') }}" /></td>
+                                        {% if banner.imagemMob|default('') != '' %}
+                                            <td><img class="thumbnail" src="{{ asset('/uploads/banner/'~banner.imagemMob) | imagine_filter('thumb_admin') }}" /></td>
+                                        {% else %}
+                                            <td>-</td>
+                                        {% endif %}
+
+                                        <td><a target="_blank" href="{{ banner.link }}">{{ banner.link }}</a></td>
+                                        <td>
+                                            <a class="link-editar" href="#{{ banner.id }}">Editar</a> |
+                                            <a class="link-excluir" href="#{{ banner.id }}">Excluir</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        
+        <!-- MODAL EDICAO -->
+
+        <div class="modal fade" id="modal-edicao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar Banner</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="body-edicao">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" id="btn-editar">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+    {% block rodape %} {{ parent() }} {% endblock %}  
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function () {
+
+            $('.link-editar').click(function () {
+
+                $id = $(this).attr('href').replace('#', '');
+                $url = '{{ path('site_admin_banners_form') }}' + "/" + $id;
+                $.ajax({
+                    type: 'GET',
+                    url: $url,
+                    success: function (response) {
+                        $('#body-edicao').html(response);
+                        $('#modal-edicao').modal('show');
+                    }
+                });
+                return false;
+            });
+
+            $('.link-excluir').click(function () {
+
+                var confirm = window.confirm("Deseja realmente excluir o registro?");
+
+                if (confirm) {
+                    $id = $(this).attr('href').replace('#', '');
+                    $url = '{{ path('site_admin_banners_exclui') }}' + "/" + $id;
+                    $.ajax({
+                        type: 'POST',
+                        url: $url,
+                        success: function (response) {
+                            alert("Registro excluído com sucesso.");
+                            location.reload();
+                        }
+                    });
+                }
+
+                return false;
+            });
+
+        });
+    </script>
+{% endblock %}

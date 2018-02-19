@@ -1,3 +1,34 @@
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+#fos_user_profile:
+#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#    prefix: admin/profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: admin/register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: admin/resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: admin/profile
+
+#fos_user_security_login:
+#    pattern: central-do-cliente
+#    defaults: { _controller: FOSUserBundle:Security:login }
+    
+fos_user_security_check:
+    path: admin/login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+fos_user_security_logout:
+    path: admin/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+
 site:
     resource: "@SiteBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,3 +36,6 @@ site:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
